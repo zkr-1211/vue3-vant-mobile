@@ -7,7 +7,8 @@ import { VantResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import { viteVConsole } from 'vite-plugin-vconsole';
 import { babel } from '@rollup/plugin-babel';
-
+import VueSetupExtend from 'vite-plugin-vue-setup-extend';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 const pathResolve = (dir: string) => resolve(__dirname, dir);
 
 // https://vitejs.dev/config/
@@ -28,6 +29,10 @@ export default ({ command, mode }) => {
     },
     plugins: [
       vue(),
+      // * vite 可以使用 jsx/tsx 语法
+      vueJsx(),
+      // * name 可以写在 script 标签上
+      VueSetupExtend(),
       // 默认会向 index.html 注入 .env 文件的内容，类似 vite 的 loadEnv函数
       // 还可配置entry入口文件， inject自定义注入数据等
       createHtmlPlugin(),

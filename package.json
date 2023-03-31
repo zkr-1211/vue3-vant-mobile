@@ -47,6 +47,8 @@
     "vite": "^3.0.0",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-vconsole": "^1.2.2",
-    "vue-tsc": "^0.38.4"
+    "vue-tsc": "^0.38.4",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.10"
   }
 }

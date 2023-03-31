@@ -16,6 +16,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+
     .header {
       position: fixed;
       top: 0;
@@ -25,6 +26,7 @@
       z-index: 1;
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
     }
+
     .content {
       padding: 16px;
       margin-top: @header-height;
