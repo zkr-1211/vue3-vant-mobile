@@ -1,0 +1,12 @@
+[build]
+  command = "CI= npm run build -- --mode development"
+
+[[redirects]]
+  from = "/v1/*"
+  to = "https://polardaytest.postar.cn/v1/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
