@@ -4,5 +4,5 @@
 export interface Response<T = any> {
   code: number | string;
   message: string;
-  result: T;
+  data: T;
 }

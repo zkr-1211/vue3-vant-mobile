@@ -10,7 +10,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "skipLibCheck": true,
     // 👆是初始化默认配置
     /*
@@ -28,15 +31,31 @@
     // "typeRoots": [
     //   "node_modules/@types" // 默认会从'node_modules/@types'路径去引入声明文件
     // ],
+    "typeRoots": [
+      "src/typings",
+      "./node_modules/@types"
+    ],
     // "types": ["node"] // 仅引入'node'模块
     // "paths"是相对于"baseUrl"进行解析
     // 在vite.config里配置了路径别名resolve.alias，为了让编译 ts 时也能够解析对应的路径，我们还需要配置 paths 选项
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
       // "@router/*": ["src/router/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "./components.d.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "./components.d.ts"
+  ],
   // references属性是 TypeScript 3.0 的新特性，允许将 TypeScript 程序拆分结构化(即拆成多个文件，分别配置不同的部分)。
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

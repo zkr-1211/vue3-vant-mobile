@@ -1,19 +1,14 @@
 import http, { Response } from '@/utils/http';
-
-export interface LoginParams {
-  username: string;
-  password: string;
+const flag = 'payfly';
+export interface preLoginReq {
+  appType: number;
+  qrCodeEncodeStr: string;
 }
-
-interface UserInfo {
-  id: number;
-  username: string;
-  mobile: number;
-  email: string;
+export interface preLoginDataRes {
+  id: string;
+  sign: string;
+  type: string;
 }
-
-export default {
-  async login(params: LoginParams) {
-    return await http.post<Response<UserInfo>>('/user/login', params);
-  },
+export const preLogin = async (data: preLoginReq) => {
+  return await http.post<Response<preLoginDataRes>>(`/${flag}/h5/login/pre`, data);
 };

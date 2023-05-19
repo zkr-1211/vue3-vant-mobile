@@ -18,3 +18,15 @@ export const setRotate = (deg: string, prop = '--image-rotate') => {
   }
   document.documentElement.style.setProperty(prop, rotate);
 };
+
+export const getPayEnv = (): string | null => {
+  const browser = navigator.userAgent.toLowerCase();
+  let payEnv = null;
+  if (browser.match(/Alipay/i)?.[0] == 'alipay') {
+    payEnv = 'alipay';
+  }
+  if (browser.match(/MicroMessenger/i)?.[0] == 'micromessenger') {
+    payEnv = 'wx';
+  }
+  return payEnv;
+};

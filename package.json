@@ -10,7 +10,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "build:dev": "npm run build -- --mode development",
     "build:test": "npm run build -- --mode test",
-    "build:pro": "npm run build -- --mode production",
+    "build:pro": "npm run build -- --mode production && node CICD.js deploy",
+    "CICD:deploy": "node CICD.js deploy",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue,.ts src --fix"
   },
@@ -19,6 +20,7 @@
     "axios": "^0.27.2",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.18",
+    "ssh2-sftp-client": "^9.1.0",
     "vant": "^3.5.4",
     "vconsole": "^3.14.6",
     "vue": "^3.2.37",
@@ -32,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "@vitejs/plugin-vue": "^3.0.0",
+    "@vitejs/plugin-vue-jsx": "^1.3.10",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
@@ -47,8 +50,7 @@
     "vite": "^3.0.0",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-vconsole": "^1.2.2",
-    "vue-tsc": "^0.38.4",
     "vite-plugin-vue-setup-extend": "^0.4.0",
-    "@vitejs/plugin-vue-jsx": "^1.3.10"
+    "vue-tsc": "^0.38.4"
   }
 }

@@ -3,6 +3,7 @@ import type { Response } from './types';
 // import { auth } from '@/utils';
 import { Toast } from 'vant';
 import router from '@/router';
+import { storage } from '@/utils/storage';
 
 axios.defaults.timeout = 1000 * 60;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
@@ -16,9 +17,10 @@ const service = axios.create({
 // axios实例拦截请求
 service.interceptors.request.use(
   (config: AxiosRequestConfig) => {
+    const token = storage.getItem('token')?.split('|')[0].replace('"', '').replace('"', '');
     config.headers = {
       ...config.headers,
-      // ...auth.headers(), // 你的自定义headers，如token等
+      Authorization: token ? `Bearer ${token}` : '',
     };
     return config;
   },

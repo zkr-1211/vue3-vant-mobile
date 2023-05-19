@@ -6,7 +6,6 @@ import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import { viteVConsole } from 'vite-plugin-vconsole';
-import { babel } from '@rollup/plugin-babel';
 import VueSetupExtend from 'vite-plugin-vue-setup-extend';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 const pathResolve = (dir: string) => resolve(__dirname, dir);
@@ -17,6 +16,7 @@ export default ({ command, mode }) => {
   const env: Partial<ImportMetaEnv> = loadEnv(mode, process.cwd());
 
   return defineConfig({
+    base: '/payfly',
     define: {
       'process.env': env,
     },
