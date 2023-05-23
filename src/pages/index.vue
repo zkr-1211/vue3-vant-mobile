@@ -1,12 +1,11 @@
 <template>
-  <div class="index">123</div>
+  <div class="index">123456789</div>
 </template>
 
 <script setup lang="ts">
   import { preLogin, preLoginDataRes, preLoginReq } from '@/api/user';
   import { storage } from '@/utils/storage';
   import { getPayEnv } from '@/utils/util';
-  // 帮我定义好变量
   const codePlate = ref('');
   const appType = ref(1);
   const preLoginData = ref<preLoginDataRes>({
@@ -17,7 +16,7 @@
   onMounted(() => {
     removeLoc();
     codePlate.value = storage.getItem('codePlate') || '';
-    getCode();
+    console.log('codePlate.value', codePlate.value);
     preLoginMethod();
   });
   function removeLoc() {
@@ -27,6 +26,12 @@
   }
   function preLoginMethod() {
     const env = getPayEnv();
+    if (env == 'wx') {
+      appType.value = 2;
+    }
+    if (env == 'alipay') {
+      appType.value = 1;
+    }
     const params: preLoginReq = {
       appType: appType.value,
       qrCodeEncodeStr: codePlate.value,
@@ -68,16 +73,6 @@
       '&redirect_uri=' +
       encodeURIComponent(local) +
       '&scope=auth_base ';
-  }
-  function getCode() {
-    const env = getPayEnv();
-    // 1支付宝，2微信
-    if (env == 'wx') {
-      appType.value = 2;
-    }
-    if (env == 'alipay') {
-      appType.value = 1;
-    }
   }
 </script>
 

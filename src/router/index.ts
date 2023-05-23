@@ -2,14 +2,6 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 export const layoutRoutes: Array<RouteRecordRaw> = [
   {
-    path: 'index',
-    name: 'index',
-    meta: {
-      title: 'index',
-    },
-    component: () => import('@/pages/index.vue'),
-  },
-  {
     path: 'pinia',
     name: 'pinia',
     meta: {
@@ -17,6 +9,15 @@ export const layoutRoutes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/pages/pinia/index.vue'),
   },
+  {
+    path: 'index',
+    name: 'index',
+    meta: {
+      title: 'index',
+    },
+    component: () => import('@/pages/index.vue'),
+  },
+
   {
     path: 'geo',
     name: 'geo',

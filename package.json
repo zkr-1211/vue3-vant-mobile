@@ -20,9 +20,12 @@
     "axios": "^0.27.2",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.18",
+    "sass": "^1.62.1",
     "ssh2-sftp-client": "^9.1.0",
     "vant": "^3.5.4",
     "vconsole": "^3.14.6",
+    "node-sass": "^7.0.3",
+    "sass-loader": "^7.3.1",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
   },

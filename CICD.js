@@ -1,10 +1,10 @@
 import Client from 'ssh2-sftp-client';
 // SFTP 连接配置
 const sftpConfig = {
-  host: '192.168.140.108',
-  port: '10030',
-  username: 'polarday',
-  password: 'polarday',
+  host: '111.230.15.162',
+  port: '22',
+  username: 'root',
+  password: '@zkr116550',
 };
 // 上传最终的路径文件
 const uploadFile = './dist';

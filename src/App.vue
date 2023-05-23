@@ -7,25 +7,13 @@
   import watermark from '@/utils/lib/watermark';
   import copyPaste from '@/utils/lib/copy-paste';
   import { storage } from '@/utils/storage';
-  onMounted(() => {
+  import { getUrlCode } from '@/utils/util';
+  onMounted(async () => {
     debug.init();
     copyPaste.disable();
-    const codePlate = getUrlCode().codePlate;
+    const codePlate = getUrlCode().codePlate || 'cW5OcnduZDlLUzBxOHFBdkxPNUgxdz09';
     codePlate && storage.setItem('codePlate', codePlate);
   });
-  function getUrlCode(): { [key: string]: string } {
-    // 截取url中的code方法
-    const url = location.search;
-    const theRequest: { [key: string]: string } = {};
-    if (url.indexOf('?') !== -1) {
-      const str = url.substr(1);
-      const strs = str.split('&');
-      for (let i = 0; i < strs.length; i++) {
-        theRequest[strs[i].split('=')[0]] = strs[i].split('=')[1];
-      }
-    }
-    return theRequest;
-  }
   onBeforeUnmount(() => {
     watermark.remove();
     copyPaste.enable();

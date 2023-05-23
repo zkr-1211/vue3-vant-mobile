@@ -21,6 +21,7 @@ service.interceptors.request.use(
     config.headers = {
       ...config.headers,
       Authorization: token ? `Bearer ${token}` : '',
+      'client-type': 'B',
     };
     return config;
   },

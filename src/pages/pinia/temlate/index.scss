@@ -1,0 +1,374 @@
+.html-view-stop {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+.html-view-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: unset;
+}
+input[type='number']:before {
+  content: attr('请输入捐赠金额'); //强制给placeholder属性
+}
+.temple-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/mainbg.png');
+  background-size: cover;
+  background-attachment: fixed;
+  .main-center {
+    background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/pic_4.png'),
+      url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/pic_5.png');
+    background-repeat: no-repeat, repeat-y;
+    background-size: 100%, 100%;
+  }
+
+  box-sizing: border-box;
+  .main-bottom {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .main-content {
+    // height: 900px;
+    width: 100vw;
+    padding: 0 26px;
+    box-sizing: border-box;
+    // position: relative;
+    // overflow-y: auto;
+    .card {
+      min-height: 343px;
+      .title {
+        height: 121px;
+        background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/cardtop.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        font-size: 32px;
+        font-family: 'SourceHanSerifCN';
+        font-weight: bold;
+        color: #741b1a;
+        padding: 0 54px;
+        display: flex;
+        align-items: center;
+      }
+      .content {
+        padding: 10px 54px;
+        min-height: 121px;
+        letter-spacing: 2px;
+        background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/cardcenter.png');
+        background-repeat: repeat;
+        background-size: 100% 100%;
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+        font-size: 26px;
+        font-family: 'SourceHanSerifCN';
+        font-weight: 600;
+        color: #741b1a;
+        line-height: 37px;
+        opacity: 0.7;
+      }
+      .bottom {
+        height: 121px;
+        background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/caardbottom.png');
+        background-repeat: repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .formcardbg {
+      background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/formcardbg.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 100%;
+      height: 353px;
+      padding: 56px;
+      box-sizing: border-box;
+      .input {
+        border-bottom: 1px solid #741b1b;
+        height: 81px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .inputmargintop {
+        margin-top: 10px;
+      }
+      .suiyuan {
+        width: 149px;
+        height: 58px;
+      }
+      .type-box {
+        font-size: 32px;
+        font-family: 'SourceHanSerifCN';
+        font-weight: bold;
+        color: #741b1a;
+        flex-direction: row;
+        justify-content: flex-start;
+        line-height: 46px;
+        .selecttype {
+          margin-bottom: 20px;
+          display: flex;
+          align-content: center;
+          justify-content: space-between;
+        }
+        .type-title {
+          position: relative;
+          display: inline-block;
+          display: flex;
+          align-content: center;
+          justify-content: space-between;
+        }
+        // .type-title::after {
+        //   content: "";
+        //   position: absolute;
+        //   z-index: 1;
+        //   top: 16px;
+        //   right: -32px;
+        //   width: 0;
+        //   height: 0;
+        //   border-style: solid;
+        //   border-width: 20px 10px 0;
+        //   border-color: #741b1a transparent transparent;
+        // }
+      }
+    }
+    // top: -40px;
+  }
+  .pop-modal {
+    background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/popbg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 612px;
+    .pop-content {
+      height: 485px;
+      overflow-y: auto;
+      padding: 0 31px;
+      box-sizing: border-box;
+      .item {
+        box-sizing: border-box;
+        height: 96px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        font-family: SourceHanSerifCN-Bold, SourceHanSerifCN;
+        color: #741b1a;
+        font-family: 'SourceHanSerifCN';
+        font-weight: bold;
+        opacity: 0.7;
+      }
+      .item-active {
+        // font-weight: bold;
+        color: #741b1a;
+        background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/select.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        opacity: 1;
+      }
+    }
+  }
+  .placeholderClass {
+    color: rgba(116, 27, 26, 0.5) !important;
+    font-size: 32px !important;
+  }
+  .placeholderClassShow {
+    color: rgba(116, 27, 26, 0.5) !important;
+    font-size: 32px !important;
+    display: block !important;
+    animation-name: placeholderShow;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+  }
+  @keyframes placeholderShow {
+    0% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // padding: 150px 39px 78px 40px;
+    &-cancer {
+      background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/cancer.png');
+    }
+    &-confirm {
+      background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/comfir.png');
+    }
+    &-cancer,
+    &-confirm {
+      box-sizing: border-box;
+      height: 36px;
+      width: 75px;
+      background-repeat: no-repeat;
+
+      background-size: 100% 100%;
+    }
+  }
+  //   .isSelected[data-v-a027c06c] {
+  //     background: rgba(63,90,157,.15);
+  //     font-size: .42667rem;
+  //     color: #3f5a9d;
+  //     font-weight: 700;
+  // }
+  img {
+    margin: 0;
+    padding: 0;
+  }
+
+  .popup-title {
+    background-image: url('https://scene-star.obs.cn-east-3.myhuaweicloud.com/yhk-cdn/payfly/temple/titlebg.png');
+    background-repeat: no-repeat;
+    display: flex;
+    padding: 0 32px;
+    box-sizing: border-box;
+    align-items: center;
+    background-size: 100% 100%;
+    justify-content: space-between;
+    align-items: center;
+    object-fit: contain;
+    height: 120px;
+  }
+  .submit {
+    width: 100vw;
+    height: 108px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    img {
+      width: 483px;
+      height: 100%;
+    }
+  }
+  .img-content {
+    position: relative;
+    min-height: 513px;
+    width: 100vw;
+    .peishi {
+      height: 260px;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    // overflow: hidden;
+    .iconbox {
+      width: 74px;
+      position: absolute;
+      right: 28px;
+      top: 75px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      .radius-circle {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        margin: 0;
+      }
+      .usericon {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .banner {
+      width: 100vw;
+      margin: 0;
+      object-fit: contain;
+    }
+
+    .zindex1 {
+      z-index: 10;
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+    }
+    .zindex2 {
+      z-index: 20;
+      position: absolute;
+      bottom: -900px;
+      left: 0;
+      right: 0;
+    }
+    .zindex3 {
+      z-index: 30;
+    }
+    .crane {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+    }
+    .curve {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  /*
+  turn : 定义的动画名称
+  1s : 动画时间
+  linear : 动画以何种运行轨迹完成一个周期
+  infinite :规定动画应该无限次播放
+*/
+
+  .run {
+    animation: rotate 1.5s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    25% {
+      -webkit-transform: rotate(90deg);
+    }
+
+    50% {
+      -webkit-transform: rotate(180deg);
+    }
+
+    75% {
+      -webkit-transform: rotate(270deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  .text-area {
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 36px;
+    color: #8f8f94;
+  }
+}
