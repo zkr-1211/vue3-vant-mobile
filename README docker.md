@@ -65,4 +65,6 @@ docker-compose down -v --rmi all
 
 # 如果你想在后台运行容器（即“守护模式”），可以在命令中加上 -d
 
+docker rm -f $(docker ps -aq)
+docker rmi $(docker images -aq)
 docker-compose up --build -d

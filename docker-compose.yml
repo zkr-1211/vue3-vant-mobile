@@ -3,11 +3,14 @@ services:
   nginx:
     image: nginx:latest
     restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     ports:
       - "80:80"
+    # 卷映射
     volumes:
+    # 对于ng配置因为构建镜像时已经构建了，即使映射也需要进行重新构建镜像类似动态类型需要重新编译，而dist属于静态可直接访问index.html
       - ./default.conf:/etc/nginx/conf.d/default.conf
+    # 对于dist如果更新会自动映射到ng，即只要打包dist到目录即可无需重新构建镜像，而使用dockerfile只能copy或add需要重新手动构建镜像才行
       - ./dist:/usr/share/nginx/html/
