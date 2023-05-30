@@ -4,7 +4,7 @@ const sftpConfig = {
   host: '111.230.15.162',
   port: '22',
   username: 'root',
-  password: '',
+  password: '111',
 };
 // 上传最终的路径文件
 const uploadFile = './dist';
