@@ -65,6 +65,8 @@ docker-compose down -v --rmi all
 
 # 如果你想在后台运行容器（即“守护模式”），可以在命令中加上 -d
 
-docker rm -f $(docker ps -aq)
-docker rmi $(docker images -aq)
 docker-compose up --build -d
+
+# --force-recreate 参数让 Docker 强制重新创建容器 这将会停止并删除现有的容器，然后使用新构建的镜像来启动新的容器。
+
+docker-compose up -d --force-recreate -d

@@ -1,11 +1,24 @@
 version: '3.3'
 services:
+  docker_jenkins:
+    user: root                                
+    restart: always                            
+    image: jenkins/jenkins:2.386                 # 指定服务所使用的镜像 
+    container_name: jenkins                    # 容器名称
+    ports:                                     # 对外暴露的端口定义
+      - 8080:8080
+      - 50000:50000
+    volumes:                                   # 卷挂载路径
+      - /jenkins/jenkins_home/:/var/jenkins_home  #冒号前为刚刚创建的路径，这里要写绝对路径
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker                
+      - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
   nginx:
     image: nginx:latest
     restart: always
     # build:
     #   context: .
-    #   dockerfile: Dockerfile
+    #   dockerfile: dockerfile
     ports:
       - "80:80"
     # 卷映射
@@ -13,4 +26,5 @@ services:
     # 对于ng配置因为构建镜像时已经构建了，即使映射也需要进行重新构建镜像类似动态类型需要重新编译，而dist属于静态可直接访问index.html
       - ./default.conf:/etc/nginx/conf.d/default.conf
     # 对于dist如果更新会自动映射到ng，即只要打包dist到目录即可无需重新构建镜像，而使用dockerfile只能copy或add需要重新手动构建镜像才行
+    # 镜像构建后dist文件不要去手动删除，这会导致镜像失效，失效就需要重新构建,使用：docker-compose up --force-recreate -d
       - ./dist:/usr/share/nginx/html/
