@@ -84,3 +84,4 @@ mv dist backup/dist\_$(date +%Y%m%d%H%M%S) # 如果存在，则备份到 backup 
 fi
 tar zxvf dist.tar # 解压 dist.tar 文件到当前目录下
 rm -rf dist.tar # 删除 dist.tar 压缩包
+docker-compose up -d --force-recreate # 强制重新创建容器 这将会停止并删除现有的容器，然后使用新构建的镜像来启动新的容器
