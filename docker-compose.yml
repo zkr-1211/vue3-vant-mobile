@@ -1,24 +1,22 @@
 version: '3.3'
 services:
-  docker_jenkins:
-    user: root                                
-    restart: always                            
-    image: jenkins/jenkins:2.386                 # 指定服务所使用的镜像 
-    container_name: jenkins                    # 容器名称
-    ports:                                     # 对外暴露的端口定义
-      - 8080:8080
-      - 50000:50000
-    volumes:                                   # 卷挂载路径
-      - /jenkins/jenkins_home/:/var/jenkins_home  #冒号前为刚刚创建的路径，这里要写绝对路径
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/bin/docker:/usr/bin/docker                
-      - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
-  nginx:
+  # docker_jenkins:
+  #   user: root                                
+  #   restart: always                            
+  #   image: jenkinsci/blueocean                 # 指定服务所使用的镜像 
+  #   container_name: jenkins                    # 容器名称
+  #   ports:                                     # 对外暴露的端口定义
+  #     - 8080:8080
+  #     - 50000:50000
+  #   volumes:                                   # 卷挂载路径
+  #     - /jenkins/jenkins_home/:/var/jenkins_home/  #冒号前为刚刚创建的路径，这里要写绝对路径
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - /usr/bin/docker:/usr/bin/docker                
+  #     - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
+  docker_nginx:
     image: nginx:latest
     restart: always
-    # build:
-    #   context: .
-    #   dockerfile: dockerfile
+    container_name: nginx 
     ports:
       - "80:80"
     # 卷映射

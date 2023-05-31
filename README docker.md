@@ -69,4 +69,4 @@ docker-compose up --build -d
 
 # --force-recreate 参数让 Docker 强制重新创建容器 这将会停止并删除现有的容器，然后使用新构建的镜像来启动新的容器。
 
-docker-compose up -d --force-recreate -d
+docker-compose up -d --force-recreate
