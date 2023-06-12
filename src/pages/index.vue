@@ -1,5 +1,5 @@
 <template>
-  <div class="index">111222333</div>
+  <div class="index">github pages + github action</div>
 </template>
 
 <script setup lang="ts">
