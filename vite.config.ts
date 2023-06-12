@@ -16,6 +16,7 @@ export default ({ command, mode }) => {
   const env: Partial<ImportMetaEnv> = loadEnv(mode, process.cwd());
 
   return defineConfig({
+    base: '/vue3-vant-mobile/',
     define: {
       'process.env': env,
     },
